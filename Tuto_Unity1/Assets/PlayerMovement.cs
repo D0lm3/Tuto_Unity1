@@ -4,8 +4,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public Rigidbody rb ; //We use rb for rigidbody (to save time)
-    public float forwardForce = 2000f;
-    public float sidewaysForce = 500f;
+    public float forwardForce = 3000f; //we put 3000 and 50 because we use a drag of 1 in the player window
+    public float sidewaysForce = 50f;
 
     
     void Start()
@@ -20,12 +20,12 @@ public class PlayerMovement : MonoBehaviour
 
         if( Input.GetKey("d"))
         {
-            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
 
         if( Input.GetKey("q"))
         {
-            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0);
+            rb.AddForce(-sidewaysForce * Time.deltaTime, 0, 0, ForceMode.VelocityChange);
         }
     }
 }
