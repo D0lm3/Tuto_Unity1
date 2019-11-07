@@ -9,7 +9,7 @@ public class PlayerCollision : MonoBehaviour
 
        Debug.Log("We hit an obstacle !");
        movement.enabled = false; //cancel the player movement
-
+       FindObjectOfType<GameManager>().EndGame();
        }
-    }
+   }
 }
